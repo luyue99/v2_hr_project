@@ -1,9 +1,5 @@
 /**
- * Created by PanJiaChen on 16/11/18.
- */
-
-/**
- * Parse the time to string
+ * 解析时间成字符串
  * @param {(Object|string|number)} time
  * @param {string} cFormat
  * @returns {string | null}
@@ -52,6 +48,7 @@ export function parseTime(time, cFormat) {
 }
 
 /**
+ * 格式化时间
  * @param {number} time
  * @param {string} option
  * @returns {string}
@@ -95,6 +92,7 @@ export function formatTime(time, option) {
 }
 
 /**
+ * 将url中的参数转为对象
  * @param {string} url
  * @returns {Object}
  */
