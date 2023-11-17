@@ -1,6 +1,6 @@
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'// 导入 js-cookie 模块，用于处理 cookie
 
-// 定义状态
+// 定义仓库状态
 const state = {
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true, // 获取侧边栏状态 cookie，若不存在则默认打开
@@ -11,9 +11,11 @@ const state = {
 
 // 定义状态变更的 mutation
 const mutations = {
-  TOGGLE_SIDEBAR: state => {
+  /* 侧边栏的切换 */
+  TOGGLE_SIDEBAR: (state) => {
     // 切换侧边栏的打开和关闭状态
     state.sidebar.opened = !state.sidebar.opened
+    // 设置侧边栏动画(无动画)
     state.sidebar.withoutAnimation = false
 
     // 根据侧边栏的打开状态更新 cookie
@@ -23,8 +25,8 @@ const mutations = {
       Cookies.set('sidebarStatus', 0)
     }
   },
+  /* 关闭侧边栏 */
   CLOSE_SIDEBAR: (state, withoutAnimation) => {
-    // 关闭侧边栏
     Cookies.set('sidebarStatus', 0)
     state.sidebar.opened = false
     state.sidebar.withoutAnimation = withoutAnimation

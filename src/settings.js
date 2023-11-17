@@ -4,7 +4,7 @@ module.exports = {
    * @type {boolean} true | false
    * @description 网站标题
    */
-  title: 'Vue Admin Template',
+  title: '甄选HR管理系统',
 
   /**
    * @type {boolean} true | false

@@ -1,14 +1,18 @@
 // 导入API函数和工具函数
+// 导入登录、登出、获取用户信息的API
 import { login, logout, getInfo } from '@/api/user'
+// 导入获取和设置Token的工具函数
 import { getToken, setToken, removeToken } from '@/utils/auth'
+// 导入重置路由的函数
 import { resetRouter } from '@/router'
 
 // 获取默认状态
 const getDefaultState = () => {
+  // 获取token
   return {
-    token: getToken(),
-    name: '',
-    avatar: ''
+    token: getToken(), // 获取用户token
+    name: '', // 初始化名称为空字符串
+    avatar: '' // 初始化头像为空字符串
   }
 }
 
